@@ -16,7 +16,6 @@
       git commit -m "add: initial commit."
       ```
 
-For your Readme's data setup section, you can structure it like this:
 
 ---
 
@@ -25,7 +24,7 @@ For your Readme's data setup section, you can structure it like this:
 To set up the dataset and prepare the environment for preprocessing and other pipelines, please follow the steps below.
 
 ### Prerequisites
-- Ensure you have a Huggingface account and access to the **IntentConanV2** dataset [Aswini123/IntentCONANv2](https://huggingface.co/Aswini123/IntentCONANv2).
+- Ensure you have a Huggingface account and access to the **IntentConanV2** dataset [Aswini123/IntentCONANv2](https://huggingface.co/datasets/Aswini123/IntentCONANv2).
 - Huggingface's `datasets` library and the required dependencies must be installed. You can install them with the following command:
 
 ```bash
@@ -60,10 +59,6 @@ huggingface-cli login
 3. **Dataset Download and Preprocessing:**
 
    After successful login, the script will automatically download the **IntentConanV2** dataset and run the required data preprocessing.
-
----
-
-Certainly! Here’s the **Training Pipelines** part of the Readme:
 
 ---
 
