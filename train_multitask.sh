@@ -1,1 +1,1 @@
-python3 project/multitask_train.py --output_folder project/log/multitask
+python3 project/multitask_train.py --output_folder log/multitask

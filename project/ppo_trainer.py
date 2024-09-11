@@ -140,7 +140,7 @@ def main(num_epochs, learning_rate, batch_size, max_length, model_name, output_f
     print(f"Query:")
     print(dataset_train_tokenized["query"][0])
 
-    peft_model_path = "project/log/peft"
+    peft_model_path = "log/peft"
 
     lora_config = LoraConfig(
         r=768,
