@@ -6,10 +6,6 @@ import torch
 import gc
 import os
 
-os.environ["http_proxy"] = "http://xen03.iitd.ac.in:3128"
-os.environ["https_proxy"] = "http://xen03.iitd.ac.in:3128"
-
-
 class RewardModel:
     def __init__(self):
         self.label_list = ["Informative", "Questioning", "Positive", "Denouncing"]

@@ -61,7 +61,8 @@ def main():
 
     # Parse the command line arguments
     args = parser.parse_args()
-
+    assert os.path.exists(args.input_file)
+    
     # Check if the input file exists
     if os.path.exists(args.input_file):
         print(f"Processing input file '{args.input_file}'")
@@ -95,6 +96,8 @@ def main():
     else:
         print(f"Input file '{args.input_file}' does not exist.")
 
+    print(f"Saved to {args.output_file}")
+
 
 if __name__ == "__main__":
     main()
@@ -102,5 +105,5 @@ if __name__ == "__main__":
 
 """
 Sample usage
-python prompting.py 
+python project/prompting.py --input_file=project/data/train.csv --output_file=project/data/train.csv
 """
