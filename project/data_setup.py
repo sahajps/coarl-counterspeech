@@ -26,8 +26,8 @@ def main():
         return
 
     # Create the data directory if it doesn't exist
-    os.makedirs("project/data", exist_ok=True)
-    os.makedirs("project/log", exist_ok=True)
+    os.makedirs("project/data/", exist_ok=True)
+    os.makedirs("project/log/", exist_ok=True)
 
     # Save the train, test, and validation splits as CSV files
     try:
