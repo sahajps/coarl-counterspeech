@@ -174,7 +174,7 @@ if __name__ == "__main__":
     parser.add_argument('--learning_rate', type=float, default=1e-3, help='Learning rate for the optimizer')
     parser.add_argument('--batch_size', type=int, default=8, help='Batch size for training')
     parser.add_argument('--max_length', type=int, default=1024, help='Maximum input length')
-    parser.add_argument('--model_name', type=str, default='google/flan-t5-small', help='Model name to use for training')
+    parser.add_argument('--model_name', type=str, default='google/flan-t5-xxl', help='Model name to use for training')
     parser.add_argument('--output_folder', type=str, default='output', help='Folder to save training results')
 
     # Parse arguments from command line

@@ -30,7 +30,7 @@ else:
 class IntentConanDataset(Dataset):
     def __init__(self, tokenizer, csv_file):
         self.tokenizer = tokenizer
-        self.data = pd.read_csv(csv_file)[:100]
+        self.data = pd.read_csv(csv_file)
         if "level_0" not in self.data.columns:
             self.data.reset_index(inplace=True)
         self.hatespeech_col = "hatespeech"
@@ -252,7 +252,7 @@ if __name__ == "__main__":
     parser.add_argument('--learning_rate', type=float, default=1e-3, help='Learning rate for the optimizer')
     parser.add_argument('--batch_size', type=int, default=16, help='Batch size for training')
     parser.add_argument('--max_length', type=int, default=512, help='Maximum input length')
-    parser.add_argument('--model_name', type=str, default='google/flan-t5-small', help='Model name to use for training')
+    parser.add_argument('--model_name', type=str, default='google/flan-t5-xxl', help='Model name to use for training')
     parser.add_argument('--output_folder', type=str, default='output', help='Folder to save training results')
 
     # Parse arguments from command line

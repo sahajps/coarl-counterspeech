@@ -52,8 +52,8 @@ def print_number_of_trainable_model_parameters(model):
 
 train_file = const.TEST_DATASET
 validation_file = const.DEV_DATASET
-df_train = pd.read_csv(train_file).sample(10)
-df_val = pd.read_csv(validation_file).sample(10)
+df_train = pd.read_csv(train_file)
+df_val = pd.read_csv(validation_file)
 src_col = "prompt_cs_generation"
 trg_col = "counterspeech"
 
@@ -140,7 +140,7 @@ def main(num_epochs, learning_rate, batch_size, max_length, model_name, output_f
     print(f"Query:")
     print(dataset_train_tokenized["query"][0])
 
-    peft_model_path = "/home/amey/coarl-counterspeech/checkpoints/best_model_small"
+    peft_model_path = "project/log"
 
     lora_config = LoraConfig(
         r=768,
@@ -231,7 +231,7 @@ def main(num_epochs, learning_rate, batch_size, max_length, model_name, output_f
 
     # %%
     learning_rate = learning_rate
-    max_ppo_epochs = 100
+    max_ppo_epochs = 1000
     mini_batch_size = batch_size / 4
     batch_size = batch_size
 
@@ -256,7 +256,7 @@ def main(num_epochs, learning_rate, batch_size, max_length, model_name, output_f
     output_min_length = 30
     output_max_length = max_length
     output_length_sampler = LengthSampler(output_min_length, output_max_length)
-    max_ppo_steps = 1000000
+    max_ppo_steps = 500000
 
     generation_kwargs = {"min_length": 30, "top_p": 1.0, "do_sample": True}
 
@@ -326,7 +326,7 @@ if __name__ == "__main__":
     parser.add_argument('--learning_rate', type=float, default=1.41e-5, help='Learning rate for the optimizer')
     parser.add_argument('--batch_size', type=int, default=8, help='Batch size for training')
     parser.add_argument('--max_length', type=int, default=1024, help='Maximum input length')
-    parser.add_argument('--model_name', type=str, default='google/flan-t5-small', help='Model name to use for training')
+    parser.add_argument('--model_name', type=str, default='google/flan-t5-large', help='Model name to use for training')
     parser.add_argument('--output_folder', type=str, default='output', help='Folder to save training results')
 
     # Parse arguments from command line
